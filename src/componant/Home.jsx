@@ -60,17 +60,18 @@ export const Home = () => {
     return (
         <React.Fragment>
             <div className="container">
-            <h1 className='weather-app'>Welcome to my home page</h1>
-            <form onSubmit={handleSubmit}>
-                <input  className='weather-search'
-                    type="text" 
-                    value={city} 
-                    onChange={(e) => setCity(e.target.value)} 
-                    placeholder="Enter city" 
+                <h1 className='weather-app'>Welcome to my home page</h1>
+                <form onSubmit={handleSubmit}>
+                    <input 
+                        className='weather-search'
+                        type="text" 
+                        value={city} 
+                        onChange={(e) => setCity(e.target.value)} 
+                        placeholder="Enter city" 
                     />
-                <button type="submit" className='btn'>Check Weather</button>
-            </form>
-                    </div>
+                    <button type="submit" className='btn'>Check Weather</button>
+                </form>
+            </div>
                    
             {error && (
                 <div className='error-msg'>
@@ -78,9 +79,9 @@ export const Home = () => {
                 </div>
             )}
             {weatherData && (
-                <div className={`temp-Data conatiner ${weatherClass}`}>
+                <div className={`temp-Data container ${weatherClass}`}>
                     <h2>Weather Information</h2>
-                    <p>City : {weatherData.location?.name}</p>
+                    <p>City: {weatherData.location?.name}</p>
                     <p>Temperature: {weatherData.current?.temp_c}°C</p>
                     <img 
                         src={`https:${weatherData.current?.condition?.icon}`} 
