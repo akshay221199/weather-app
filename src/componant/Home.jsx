@@ -10,9 +10,12 @@ export const Home = () => {
         e.preventDefault();
         const formattedCity = city.trim().toLowerCase();
 
+        // Clear previous errors when a new search is performed
+        setError(null);
+        setWeatherData(null);
+
         if (!formattedCity) {
             setError('Please enter a city name.');
-            setWeatherData(null);
             return;
         }
 
@@ -23,19 +26,16 @@ export const Home = () => {
 
             if (response.status === 429) {
                 setError('Request limit exceeded. Please try again later.');
-                setWeatherData(null);
                 return;
             }
 
             if (!response.ok) {
                 setError('City not found');
-                setWeatherData(null);
                 return;
             }
 
             const data = await response.json();
             setWeatherData(data);
-            setError(null);
 
             const tempC = data.current?.temp_c;
             const condition = data.current?.condition?.text?.toLowerCase() || '';
