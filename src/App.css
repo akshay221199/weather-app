@@ -1,0 +1,84 @@
+/* Base styles */
+.error-msg {
+    color: red;
+    font-weight: bold;
+}
+
+/* Weather condition classes */
+.hot {
+    background-color: orange;
+}
+
+.really-hot {
+    background-color: red;
+}
+
+.rainy {
+    background-color: lightblue;
+}
+
+.windy {
+    background-color: lightgray;
+}
+
+/* Container for weather data */
+.temp-Data {
+    padding: 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    .temp-Data {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .temp-Data {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    input[type="text"] {
+        padding: 8px;
+        margin-bottom: 8px;
+    }
+
+    button {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+.weather-app{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.weather-search {
+    
+    width: 30%; /* Ensures the container takes full width */
+}
+.weather-search input {
+    text-align: center; /* Centers text inside the input */
+    padding: 8px; /* Adds padding inside the input */
+    border: 1px solid #ccc; /* Adds a border to the input */
+    border-radius: 4px; /* Adds rounded corners to the input */
+}
